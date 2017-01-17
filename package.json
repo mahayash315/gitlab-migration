@@ -1,0 +1,24 @@
+{
+  "name": "gitlab-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "migrate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tglovernuppy/gitlab-migration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tglovernuppy/gitlab-migration/issues"
+  },
+  "homepage": "https://github.com/tglovernuppy/gitlab-migration#readme",
+  "dependencies": {
+    "rx": "^4.1.0",
+    "simple-git": "^1.65.0",
+    "superagent": "^3.3.2"
+  }
+}
