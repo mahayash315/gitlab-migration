@@ -210,8 +210,8 @@ function migrateProjects(migrateUsersResult) {
 						console.log("[" + createdProject.name +"] migrating issues");
 						return apiv2.getAllProjectIssues(newProject.id)
 							.map(function(v2ProjectIssue) {
-								var v3AuthorUser = v3Users.find(function(user) { return (user.id == v2v3UserIdMap[v2ProjectIssue.author.id]); });
-								var v3AssigneeUser = v3Users.find(function(user) { return (user.id == v2v3UserIdMap[v2ProjectIssue.assignee.id]); });
+								var v3AuthorUser = v2ProjectIssue.author != null ? v3Users.find(function(user) { return (user.id == v2v3UserIdMap[v2ProjectIssue.author.id]); }) : null;
+								var v3AssigneeUser = v2ProjectIssue.assignee != null ? v3Users.find(function(user) { return (user.id == v2v3UserIdMap[v2ProjectIssue.assignee.id]); }) : null;
 								var v3Milestone = { id: (v2ProjectIssue.milestone != null) ? v2ProjectIssue.milestone.id : null }; // FIXME: should be obtained properly
 								return Converter.convertProjectIssue(v2ProjectIssue, v3AuthorUser, v3AssigneeUser, v3Milestone);
 							})
