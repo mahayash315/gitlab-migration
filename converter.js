@@ -42,7 +42,7 @@ var Converter = { // an object that has static methods
 	convertProject: function(v2Project, v3User) {
 		return {
 			"user_id": v3User.id,
-			"name": v2Project.name,
+			"name": v2Project.code,
 			"path": v2Project.path,
 			//"namespace_id": ,
 			"description": v2Project.description,

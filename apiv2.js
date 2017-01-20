@@ -314,7 +314,7 @@ APIv2.prototype.getProjectMilestone = function(projectId, milestoneId) {
 				  .asObservable();
 };
 
-APIv2.prototype.addProjectMilestone = function(projectId, issue) {
+APIv2.prototype.addProjectMilestone = function(projectId, milestone) {
 	return request.post(this.baseUrl + '/projects/' + projectId + '/milestones')
 				  .query({
 				  	'private_token': this.privateToken

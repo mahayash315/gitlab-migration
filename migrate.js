@@ -112,7 +112,7 @@ function migrateProjects(migrateUsersResult) {
 			// create mapping from v2Project to v3Project based on project title
 			.flatMap(function(val) {
 				var res = diff(val[0], val[1], function(v2Project, v3Project) {
-					return (v2Project.name == v3Project.name && v2v3UserIdMap[v2Project.owner.id] == v3Project.owner.id);
+					return (v2Project.name == v3Project.name || v2Project.code == v3Project.name && v2v3UserIdMap[v2Project.owner.id] == v3Project.owner.id);
 				}, function(v2Project, v3Project) {
 					return [v2Project.id, (v3Project != null) ? v3Project.id : null];
 				});
